@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>Corne — раскладка</title>
+<style>
+  @page { size: A4 landscape; margin: 8mm; }
+  * { box-sizing: border-box; }
+  html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  body {
+    margin: 0; color: #1a1a1a; background: #fff;
+    font: 9pt/1.2 "Segoe UI", "Noto Sans", "DejaVu Sans", Arial, sans-serif;
+  }
+  .page { width: 281mm; height: 194mm; margin: 0 auto; display: flex; flex-direction: column; gap: 3mm; }
+  header { display: flex; justify-content: space-between; align-items: baseline; border-bottom: .3mm solid #1a1a1a; padding-bottom: 1.2mm; }
+  header h1 { margin: 0; font-size: 14pt; letter-spacing: .02em; }
+  header .meta { font-size: 8pt; color: #555; }
+  .layers { flex: 1; display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 3mm 6mm; }
+  .layer h2 { margin: 0 0 1.5mm; font-size: 10.5pt; display: flex; align-items: baseline; gap: 2mm; }
+  .layer .num { display: inline-block; min-width: 5mm; padding: 0 1.2mm; border-radius: 1mm; background: #1a1a1a; color: #fff; text-align: center; font-size: 9pt; }
+  .layer .how { font-weight: normal; font-size: 8pt; color: #555; }
+  .board { display: flex; flex-direction: column; gap: .8mm; }
+  .row { display: flex; gap: .8mm; }
+  .gap { width: 4mm; flex: none; }
+  .key {
+    position: relative; flex: none; width: 10.2mm; height: 13mm;
+    border: .25mm solid #444; border-radius: 1.2mm; background: #fff;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .key .lbl { font-size: 9pt; font-weight: 600; text-align: center; line-height: 1; }
+  .key .ru { position: absolute; right: .8mm; bottom: .5mm; font-size: 7.5pt; font-weight: 700; color: #8a3b12; }
+  .key.spacer { visibility: hidden; }
+  .key.none { border-color: #d4d4d4; background: #fafafa; }
+  .key.trans { border: .25mm dashed #b5b5b5; }
+  .key.trans .lbl { color: #9a9a9a; font-weight: 400; }
+  .key.mod { background: #e6eef8; }
+  .key.layer { background: #fdf0d5; }
+  .key.layer.held { background: #f2c66d; }
+  .key.sys { background: #f6dede; }
+  .key.nav { background: #e3f1e3; }
+  .key .lbl:not(:only-child) { margin-bottom: 1mm; }
+  footer { display: flex; gap: 8mm; font-size: 8pt; border-top: .3mm solid #1a1a1a; padding-top: 1.5mm; }
+  footer h3 { margin: 0 0 .8mm; font-size: 8.5pt; }
+  footer table { border-collapse: collapse; }
+  footer td { padding: .2mm 2mm .2mm 0; vertical-align: top; }
+  footer kbd { font: inherit; font-weight: 600; border: .2mm solid #777; border-radius: .8mm; padding: 0 .8mm; }
+  .legend { display: grid; grid-template-columns: auto auto; gap: .6mm 2mm; align-items: center; }
+  .sw { display: inline-block; width: 5mm; height: 3.2mm; border: .25mm solid #444; border-radius: .6mm; vertical-align: middle; }
+  @media screen {
+    body { background: #e9e9e9; padding: 10mm 0; }
+    .page { background: #fff; padding: 8mm; width: 297mm; height: 210mm; box-shadow: 0 1mm 4mm rgba(0,0,0,.2); }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  <header>
+    <h1>Corne · ZMK · my_corne</h1>
+    <span class="meta">слои 4–6 зарезервированы для ZMK Studio · исходник: config/my_corne.keymap</span>
+  </header>
+  <div class="layers">
+<section class="layer">
+  <h2><span class="num">0</span>Base<span class="how">по умолчанию</span></h2>
+  <div class="board"><div class="row"><div class="key "><span class="lbl">Esc</span></div><div class="key "><span class="lbl">Q</span><span class="ru">й</span></div><div class="key "><span class="lbl">W</span><span class="ru">ц</span></div><div class="key "><span class="lbl">E</span><span class="ru">у</span></div><div class="key "><span class="lbl">R</span><span class="ru">к</span></div><div class="key "><span class="lbl">T</span><span class="ru">е</span></div><div class="gap"></div><div class="key "><span class="lbl">Y</span><span class="ru">н</span></div><div class="key "><span class="lbl">U</span><span class="ru">г</span></div><div class="key "><span class="lbl">I</span><span class="ru">ш</span></div><div class="key "><span class="lbl">O</span><span class="ru">щ</span></div><div class="key "><span class="lbl">P</span><span class="ru">з</span></div><div class="key "><span class="lbl">Bksp</span></div></div><div class="row"><div class="key mod"><span class="lbl">Ctrl</span></div><div class="key "><span class="lbl">A</span><span class="ru">ф</span></div><div class="key "><span class="lbl">S</span><span class="ru">ы</span></div><div class="key "><span class="lbl">D</span><span class="ru">в</span></div><div class="key "><span class="lbl">F</span><span class="ru">а</span></div><div class="key "><span class="lbl">G</span><span class="ru">п</span></div><div class="gap"></div><div class="key "><span class="lbl">H</span><span class="ru">р</span></div><div class="key "><span class="lbl">J</span><span class="ru">о</span></div><div class="key "><span class="lbl">K</span><span class="ru">л</span></div><div class="key "><span class="lbl">L</span><span class="ru">д</span></div><div class="key "><span class="lbl">;</span><span class="ru">ж</span></div><div class="key "><span class="lbl">&#x27;</span><span class="ru">э</span></div></div><div class="row"><div class="key mod"><span class="lbl">Shift</span></div><div class="key "><span class="lbl">Z</span><span class="ru">я</span></div><div class="key "><span class="lbl">X</span><span class="ru">ч</span></div><div class="key "><span class="lbl">C</span><span class="ru">с</span></div><div class="key "><span class="lbl">V</span><span class="ru">м</span></div><div class="key "><span class="lbl">B</span><span class="ru">и</span></div><div class="gap"></div><div class="key "><span class="lbl">N</span><span class="ru">т</span></div><div class="key "><span class="lbl">M</span><span class="ru">ь</span></div><div class="key "><span class="lbl">,</span><span class="ru">б</span></div><div class="key "><span class="lbl">.</span><span class="ru">ю</span></div><div class="key "><span class="lbl">/</span><span class="ru">.</span></div><div class="key "><span class="lbl">Esc</span></div></div><div class="row thumbs"><div class="key spacer"></div><div class="key spacer"></div><div class="key spacer"></div><div class="key mod"><span class="lbl">Win</span></div><div class="key layer"><span class="lbl">LWR</span></div><div class="key "><span class="lbl">Space</span></div><div class="gap"></div><div class="key "><span class="lbl">Enter</span></div><div class="key layer"><span class="lbl">RSE</span></div><div class="key mod"><span class="lbl">RAlt</span></div><div class="key spacer"></div><div class="key spacer"></div><div class="key spacer"></div></div></div>
+</section>
+<section class="layer">
+  <h2><span class="num">1</span>Lower<span class="how">держать LWR</span></h2>
+  <div class="board"><div class="row"><div class="key "><span class="lbl">Tab</span></div><div class="key "><span class="lbl">1</span></div><div class="key "><span class="lbl">2</span></div><div class="key "><span class="lbl">3</span></div><div class="key "><span class="lbl">4</span></div><div class="key "><span class="lbl">5</span></div><div class="gap"></div><div class="key "><span class="lbl">6</span></div><div class="key "><span class="lbl">7</span></div><div class="key "><span class="lbl">8</span></div><div class="key "><span class="lbl">9</span></div><div class="key "><span class="lbl">0</span></div><div class="key "><span class="lbl">Bksp</span></div></div><div class="row"><div class="key mod"><span class="lbl">Ctrl</span></div><div class="key trans"><span class="lbl">A</span></div><div class="key trans"><span class="lbl">S</span></div><div class="key trans"><span class="lbl">D</span></div><div class="key trans"><span class="lbl">F</span></div><div class="key trans"><span class="lbl">G</span></div><div class="gap"></div><div class="key nav"><span class="lbl">←</span></div><div class="key nav"><span class="lbl">↓</span></div><div class="key nav"><span class="lbl">↑</span></div><div class="key nav"><span class="lbl">→</span></div><div class="key trans"><span class="lbl">;</span></div><div class="key trans"><span class="lbl">&#x27;</span></div></div><div class="row"><div class="key mod"><span class="lbl">Shift</span></div><div class="key trans"><span class="lbl">Z</span></div><div class="key trans"><span class="lbl">X</span></div><div class="key trans"><span class="lbl">C</span></div><div class="key trans"><span class="lbl">V</span></div><div class="key trans"><span class="lbl">B</span></div><div class="gap"></div><div class="key trans"><span class="lbl">N</span></div><div class="key trans"><span class="lbl">M</span></div><div class="key trans"><span class="lbl">,</span></div><div class="key trans"><span class="lbl">.</span></div><div class="key trans"><span class="lbl">/</span></div><div class="key trans"><span class="lbl">Esc</span></div></div><div class="row thumbs"><div class="key spacer"></div><div class="key spacer"></div><div class="key spacer"></div><div class="key mod"><span class="lbl">Win</span></div><div class="key layer held"><span class="lbl">LWR</span></div><div class="key "><span class="lbl">Space</span></div><div class="gap"></div><div class="key "><span class="lbl">Enter</span></div><div class="key trans"><span class="lbl">RSE</span></div><div class="key mod"><span class="lbl">RAlt</span></div><div class="key spacer"></div><div class="key spacer"></div><div class="key spacer"></div></div></div>
+</section>
+<section class="layer">
+  <h2><span class="num">2</span>Raise<span class="how">держать RSE</span></h2>
+  <div class="board"><div class="row"><div class="key "><span class="lbl">Tab</span></div><div class="key "><span class="lbl">!</span></div><div class="key "><span class="lbl">@</span><span class="ru">&quot;</span></div><div class="key "><span class="lbl">#</span><span class="ru">№</span></div><div class="key "><span class="lbl">$</span><span class="ru">;</span></div><div class="key "><span class="lbl">%</span></div><div class="gap"></div><div class="key "><span class="lbl">^</span><span class="ru">:</span></div><div class="key "><span class="lbl">&amp;</span><span class="ru">?</span></div><div class="key "><span class="lbl">*</span></div><div class="key "><span class="lbl">(</span></div><div class="key "><span class="lbl">)</span></div><div class="key "><span class="lbl">Bksp</span></div></div><div class="row"><div class="key mod"><span class="lbl">Ctrl</span></div><div class="key trans"><span class="lbl">A</span></div><div class="key trans"><span class="lbl">S</span></div><div class="key trans"><span class="lbl">D</span></div><div class="key trans"><span class="lbl">F</span></div><div class="key trans"><span class="lbl">G</span></div><div class="gap"></div><div class="key "><span class="lbl">-</span></div><div class="key "><span class="lbl">=</span></div><div class="key "><span class="lbl">[</span><span class="ru">х</span></div><div class="key "><span class="lbl">]</span><span class="ru">ъ</span></div><div class="key "><span class="lbl">\</span></div><div class="key "><span class="lbl">`</span><span class="ru">ё</span></div></div><div class="row"><div class="key mod"><span class="lbl">Shift</span></div><div class="key trans"><span class="lbl">Z</span></div><div class="key trans"><span class="lbl">X</span></div><div class="key trans"><span class="lbl">C</span></div><div class="key trans"><span class="lbl">V</span></div><div class="key trans"><span class="lbl">B</span></div><div class="gap"></div><div class="key "><span class="lbl">_</span></div><div class="key "><span class="lbl">+</span></div><div class="key "><span class="lbl">{</span><span class="ru">Х</span></div><div class="key "><span class="lbl">}</span><span class="ru">Ъ</span></div><div class="key "><span class="lbl">|</span><span class="ru">/</span></div><div class="key "><span class="lbl">~</span><span class="ru">Ё</span></div></div><div class="row thumbs"><div class="key spacer"></div><div class="key spacer"></div><div class="key spacer"></div><div class="key mod"><span class="lbl">Win</span></div><div class="key trans"><span class="lbl">LWR</span></div><div class="key "><span class="lbl">Space</span></div><div class="gap"></div><div class="key "><span class="lbl">Enter</span></div><div class="key layer held"><span class="lbl">RSE</span></div><div class="key mod"><span class="lbl">RAlt</span></div><div class="key spacer"></div><div class="key spacer"></div><div class="key spacer"></div></div></div>
+</section>
+<section class="layer">
+  <h2><span class="num">3</span>System<span class="how">держать LWR + RSE</span></h2>
+  <div class="board"><div class="row"><div class="key sys"><span class="lbl">BT Clr</span></div><div class="key sys"><span class="lbl">BT1</span></div><div class="key sys"><span class="lbl">BT2</span></div><div class="key sys"><span class="lbl">BT3</span></div><div class="key sys"><span class="lbl">BT4</span></div><div class="key sys"><span class="lbl">BT5</span></div><div class="gap"></div><div class="key none"></div><div class="key "><span class="lbl">F7</span></div><div class="key "><span class="lbl">F8</span></div><div class="key "><span class="lbl">F9</span></div><div class="key "><span class="lbl">F10</span></div><div class="key none"></div></div><div class="row"><div class="key none"></div><div class="key none"></div><div class="key none"></div><div class="key none"></div><div class="key none"></div><div class="key none"></div><div class="gap"></div><div class="key none"></div><div class="key "><span class="lbl">F4</span></div><div class="key "><span class="lbl">F5</span></div><div class="key "><span class="lbl">F6</span></div><div class="key "><span class="lbl">F11</span></div><div class="key sys"><span class="lbl">Studio</span></div></div><div class="row"><div class="key sys"><span class="lbl">Boot</span></div><div class="key none"></div><div class="key none"></div><div class="key none"></div><div class="key none"></div><div class="key none"></div><div class="gap"></div><div class="key none"></div><div class="key "><span class="lbl">F1</span></div><div class="key "><span class="lbl">F2</span></div><div class="key "><span class="lbl">F3</span></div><div class="key "><span class="lbl">F12</span></div><div class="key sys"><span class="lbl">Boot</span></div></div><div class="row thumbs"><div class="key spacer"></div><div class="key spacer"></div><div class="key spacer"></div><div class="key none"></div><div class="key layer held"><span class="lbl">LWR</span></div><div class="key none"></div><div class="gap"></div><div class="key none"></div><div class="key layer held"><span class="lbl">RSE</span></div><div class="key none"></div><div class="key spacer"></div><div class="key spacer"></div><div class="key spacer"></div></div></div>
+</section>
+  </div>
+  <footer>
+    <div>
+      <h3>Комбо (только слой Base)</h3>
+      <table>
+        <tr><td><kbd>J</kbd> + <kbd>K</kbd> + <kbd>L</kbd></td><td>Enter</td><td>окно 50 мс</td></tr>
+        <tr><td><kbd>D</kbd> + <kbd>F</kbd></td><td>Alt+Shift (язык)</td><td>окно 50 мс, после паузы 150 мс</td></tr>
+      </table>
+    </div>
+    <div>
+      <h3>Системное</h3>
+      <table>
+        <tr><td><kbd>Boot</kbd></td><td>режим прошивки той половины, где нажата</td></tr>
+        <tr><td><kbd>BT Clr</kbd></td><td>забыть пару текущего профиля</td></tr>
+        <tr><td><kbd>Studio</kbd></td><td>разблокировать ZMK Studio (USB, левая половина)</td></tr>
+      </table>
+    </div>
+    <div>
+      <h3>Обозначения</h3>
+      <div class="legend">
+        <span class="sw" style="background:#e6eef8"></span><span>модификатор</span>
+        <span class="sw" style="background:#fdf0d5"></span><span>переключатель слоя (тёмный — удерживается)</span>
+        <span class="sw" style="border-style:dashed;border-color:#b5b5b5"></span><span>прозрачная — как на Base</span>
+        <span class="sw" style="border-color:#d4d4d4;background:#fafafa"></span><span>ничего не делает</span>
+        <span class="sw" style="background:#fff;position:relative"></span><span><span style="color:#8a3b12">кир.</span> — символ в русской раскладке</span>
+      </div>
+    </div>
+  </footer>
+</div>
+</body>
+</html>
