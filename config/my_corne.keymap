@@ -30,6 +30,16 @@
                 };
         };
 
+        conditional_layers {
+                compatible = "zmk,conditional-layers";
+
+                // Lower + Raise -> System
+                system {
+                        if-layers = <1 2>;
+                        then-layer = <3>;
+                };
+        };
+
         keymap {
                 compatible = "zmk,keymap";
 
@@ -51,13 +61,13 @@
                         display-name = "Lower";
 // -----------------------------------------------------------------------------------------
 // |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BSPC |
-// | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |STUDIO|
-// | SHFT | BOOT|     |     |     |     |   |     |     |     |     | BOOT|      |
+// | CTRL |     |     |     |     |     |   | LFT | DWN |  UP | RGT |     |      |
+// | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
 //                    | GUI |     | SPC |   | ENT |     | RALT|
                         bindings = <
    &kp TAB    &kp N1       &kp N2       &kp N3       &kp N4       &kp N5         &kp N6   &kp N7   &kp N8 &kp N9    &kp N0 &kp BSPC
-   &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4   &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans &studio_unlock
-   &kp LSHFT  &bootloader  &trans       &trans       &trans       &trans         &trans   &trans   &trans &trans    &bootloader &trans
+   &kp LCTRL  &trans       &trans       &trans       &trans       &trans         &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans &trans
+   &kp LSHFT  &trans       &trans       &trans       &trans       &trans         &trans   &trans   &trans &trans    &trans &trans
                                     &kp LGUI     &trans       &kp SPACE      &kp RET  &trans   &kp RALT
                         >;
                 };
@@ -74,6 +84,21 @@
    &kp LCTRL &trans   &trans &trans   &trans   &trans      &kp MINUS &kp EQUAL &kp LBKT  &kp RBKT &kp BSLH &kp GRAVE
    &kp LSHFT &trans   &trans &trans   &trans   &trans      &kp UNDER &kp PLUS  &kp LBRC  &kp RBRC &kp PIPE &kp TILDE
                              &kp LGUI &trans   &kp SPACE   &kp RET   &trans    &kp RALT
+                        >;
+                };
+
+                system_layer {
+                        display-name = "System";
+// -----------------------------------------------------------------------------------------
+// | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   |     |  F7 |  F8 |  F9 | F10 |      |
+// |      |     |     |     |     |     |   |     |  F4 |  F5 |  F6 | F11 |STUDIO|
+// | BOOT |     |     |     |     |     |   |     |  F1 |  F2 |  F3 | F12 | BOOT |
+//                    |     | LWR |     |   |     | RSE |     |
+                        bindings = <
+   &bt BT_CLR  &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4   &none &kp F7 &kp F8 &kp F9 &kp F10 &none
+   &none       &none        &none        &none        &none        &none          &none &kp F4 &kp F5 &kp F6 &kp F11 &studio_unlock
+   &bootloader &none        &none        &none        &none        &none          &none &kp F1 &kp F2 &kp F3 &kp F12 &bootloader
+                                         &none        &trans       &none          &none &trans &none
                         >;
                 };
 
