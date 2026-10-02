@@ -1,11 +1,6 @@
-/*
- * Hand-wired pinout for the left half (ProMicro nRF52840 / nice!nano v2 clone).
- * Pins are nRF52840 GPIOs as printed on the board: P0.xx -> &gpio0 xx, P1.xx -> &gpio1 xx.
- */
+#include "my_corne.dtsi"
 
 &kscan0 {
-    diode-direction = "col2row";
-
     // top to bottom; row 4 = thumb keys (columns 4, 5, 6)
     row-gpios
         = <&gpio1 0  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // P1.00
@@ -20,7 +15,7 @@
         , <&gpio1 15 GPIO_ACTIVE_HIGH>  // P1.15
         , <&gpio1 13 GPIO_ACTIVE_HIGH>  // P1.13
         , <&gpio1 11 GPIO_ACTIVE_HIGH>  // P1.11
-        , <&gpio0 10 GPIO_ACTIVE_HIGH>  // P0.10 (NFC pin)
-        , <&gpio0 9  GPIO_ACTIVE_HIGH>  // P0.09 (NFC pin)
+        , <&gpio0 10 GPIO_ACTIVE_HIGH>  // P0.10
+        , <&gpio0 9  GPIO_ACTIVE_HIGH>  // P0.09
         ;
 };
