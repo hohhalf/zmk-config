@@ -13,10 +13,6 @@ if SHIELD_MY_CORNE_LEFT || SHIELD_MY_CORNE_RIGHT
 config ZMK_SPLIT
     default y
 
-# P0.09 / P0.10 are used as matrix pins, release them from NFC
-config NFCT_PINS_AS_GPIOS
-    default y
-
 if ZMK_DISPLAY
 
 config I2C
