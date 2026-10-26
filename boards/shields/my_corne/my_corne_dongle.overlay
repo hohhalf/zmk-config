@@ -1,0 +1,22 @@
+/*
+ * Dongle: central without keys, connected to the PC over USB.
+ * Both halves connect to it over BLE as peripherals.
+ */
+
+#include "my_corne.dtsi"
+
+/ {
+    kscan0: kscan {
+        compatible = "zmk,kscan-mock";
+        columns = <0>;
+        rows = <0>;
+        events = <0>;
+    };
+};
+
+// dongle display: 0.96" SSD1306 128x64 (the halves use 128x32)
+&oled {
+    height = <64>;
+    multiplex-ratio = <63>;
+    /delete-property/ com-sequential;
+};

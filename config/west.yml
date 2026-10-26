@@ -4,11 +4,17 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
+    - name: englmaxi
+      url-base: https://github.com/englmaxi
     # Additional modules containing boards/shields/custom code can be listed here as well
     # See https://docs.zephyrproject.org/3.2.0/develop/west/manifest.html#projects
   projects:
     - name: zmk
       remote: zmkfirmware
       import: app/west.yml
+    # status screen for the dongle: battery of both halves, layer, modifiers, output
+    - name: zmk-dongle-display
+      remote: englmaxi
+      revision: v0.3
   self:
     path: config

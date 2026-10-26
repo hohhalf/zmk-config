@@ -1,14 +1,16 @@
-if SHIELD_MY_CORNE_LEFT
+if SHIELD_MY_CORNE_LEFT || SHIELD_MY_CORNE_DONGLE
 
 config ZMK_KEYBOARD_NAME
     default "Corne"
 
+# the left half is central only in the setup without a dongle;
+# for the dongle setup it is built with -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n (see build.yaml)
 config ZMK_SPLIT_ROLE_CENTRAL
     default y
 
 endif
 
-if SHIELD_MY_CORNE_LEFT || SHIELD_MY_CORNE_RIGHT
+if SHIELD_MY_CORNE_LEFT || SHIELD_MY_CORNE_RIGHT || SHIELD_MY_CORNE_DONGLE
 
 config ZMK_SPLIT
     default y

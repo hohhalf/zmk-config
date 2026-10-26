@@ -1,4 +1,5 @@
 #include "my_corne.dtsi"
+#include "my_corne_matrix.dtsi"
 
 &default_transform {
     col-offset = <6>;

@@ -25,5 +25,18 @@ include:
     cmake-args: -DCONFIG_ZMK_STUDIO=y
   - board: nice_nano_v2
     shield: my_corne_right
+
+  # Second keyboard: same halves wiring, with a dongle (USB to PC, halves connect to it)
+  - board: nice_nano_v2
+    shield: my_corne_dongle dongle_display
+    snippet: studio-rpc-usb-uart
+    cmake-args: -DCONFIG_ZMK_STUDIO=y
+    artifact-name: my_corne_dongle
+  - board: nice_nano_v2
+    shield: my_corne_left
+    cmake-args: -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n -DCONFIG_ZMK_DISPLAY=n
+    artifact-name: my_corne_left_peripheral
+  # the right half firmware is the same for both keyboards (my_corne_right)
+
   - board: nice_nano_v2
     shield: settings_reset

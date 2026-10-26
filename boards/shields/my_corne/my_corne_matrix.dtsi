@@ -1,0 +1,12 @@
+/*
+ * GPIO key matrix, used by the halves (not by the dongle).
+ * Pins are set per half in my_corne_left.overlay / my_corne_right.overlay.
+ */
+
+/ {
+    kscan0: kscan {
+        compatible = "zmk,kscan-gpio-matrix";
+        wakeup-source;
+        diode-direction = "col2row";
+    };
+};
